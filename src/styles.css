@@ -47,7 +47,8 @@ main {
 }
 
 .current-temperature {
-  font-size: 48px;
+  font-size: 60px;
+  margin-top: 22px;
 }
 
 .current-weather {
@@ -73,20 +74,46 @@ main {
 
 .current-temperature-icon {
   position: relative;
-  top: -8px;
-  font-size: 40px;
+  top: -5px;
+  font-size: 30px;
   margin-right: 10px;
 }
 
 .current-temperature-value {
   font-size: 80px;
   font-weight: bold;
+  position: relative;
+  top: -25px;
 }
 
 .current-temperature-unit {
   font-size: 28px;
   position: relative;
-  top: -38px;
+  top: -60px;
+}
+
+.weather-forecast-date {
+  text-align: center;
+  color: rgb(38, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.weather-forecast-icon {
+  font-size: 38px;
+  text-align: center;
+}
+.weather-forecast-temperatures {
+  text-align: center;
+  color: #f65282;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.weather-change {
+  display: flex;
+  justify-content: space-around;
+    margin-top: 30px;
 }
 
 footer {

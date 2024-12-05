@@ -106,14 +106,17 @@ function getForecast(city) {
 let weatherApp = document.getElementById("weather-app");
 
 function updateBackground(condition) {
-  let conditionDescription = condition.toLowerCase().replace(" ", " ");
-  weatherApp.style.backgroundImage = `url("src/images/${conditionDescription}.jpg")`;
+  let conditionDescription = condition.toLowerCase().replace(/ /g, "-");
+  let backgroundImage = `url("src/images/${conditionDescription}.jpg")`;
 
-  if (!backgroundImage) {
-    weatherApp.style.backgroundImage = 'url("src/images/default.jpg")';
-  } else {
+  let img = new Image();
+  img.src = `src/images/${conditionDescription}.jpg`;
+  img.onload = function () {
     weatherApp.style.backgroundImage = backgroundImage;
-  }
+  };
+  img.onerror = function () {
+    weatherApp.style.backgroundImage = 'url("src/images/default.jpg")';
+  };
 }
 
 searchCity("Paris");

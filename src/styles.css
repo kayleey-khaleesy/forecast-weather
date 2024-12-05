@@ -138,11 +138,9 @@ main {
   background-image: url("src/images/broken clouds.jpg");
 }
 
-.light-rain,
-.shower-rain {
+.light-rain {
   background-image: url("src/images/ rain.jpg");
 }
-
 .haze {
   background-image: url("src/images/haze.jpg");
 }

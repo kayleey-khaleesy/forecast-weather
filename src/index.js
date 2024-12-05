@@ -108,9 +108,9 @@ let weatherApp = document.getElementById("weather-app");
 function updateBackground(condition) {
   let conditionDescription = condition.toLowerCase().replace(" ", " ");
   weatherApp.style.backgroundImage = `url("src/images/${conditionDescription}.jpg")`;
-  weatherApp.style.backgroundImage = backgroundImage;
+
   if (!backgroundImage) {
-    weatherApp.style.backgroundImage = 'url("images/default.jpg")';
+    weatherApp.style.backgroundImage = 'url("src/images/default.jpg")';
   } else {
     weatherApp.style.backgroundImage = backgroundImage;
   }

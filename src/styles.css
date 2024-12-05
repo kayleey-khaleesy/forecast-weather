@@ -161,6 +161,9 @@ main {
 .few-clouds {
   background-image: url("src/images/few clouds.jpg");
 }
+.default {
+  background-image: url("src/images/default.jpg");
+}
 
 footer {
   border-top: 1px solid #f9f7fe;

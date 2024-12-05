@@ -16,6 +16,8 @@ function displayTemperature(response) {
   let timeELement = document.querySelector("#time");
   timeELement.innerHTML = formatDate(date);
   getForecast(response.data.city);
+  console.log("Weather condition:", response.data.condition.description);
+  updateBackground(response.data.condition.description);
 }
 
 function search(event) {
@@ -67,9 +69,7 @@ function dislplayForecast(response) {
 
   response.data.daily.forEach(function (day, index) {
     if (index < 5) {
-      forecastHtml =
-        forecastHtml +
-        `
+      forecastHtml += `
       <div class="weather-forecast-day">
         <div class="weather-forecast-date">${formatDay(day.time)}</div>
         <div class="weather-forecast-icon">
@@ -103,5 +103,17 @@ function getForecast(city) {
   axios(apiUrl).then(dislplayForecast);
 }
 
+let weatherApp = document.getElementById("weather-app");
+
+function updateBackground(condition) {
+  let conditionDescription = condition.toLowerCase().replace(" ", " ");
+  weatherApp.style.backgroundImage = `url("src/images/${conditionDescription}.jpg")`;
+  weatherApp.style.backgroundImage = backgroundImage;
+  if (!backgroundImage) {
+    weatherApp.style.backgroundImage = 'url("images/default.jpg")';
+  } else {
+    weatherApp.style.backgroundImage = backgroundImage;
+  }
+}
+
 searchCity("Paris");
-dislplayForecast();
